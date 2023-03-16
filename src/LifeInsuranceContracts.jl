@@ -5,7 +5,7 @@ using BitemporalPostgres
 using SearchLight
 using JSON
 import SearchLight: Serializer.serialize, Serializer.deserialize
-export connect, serialize, deserialize,
+export connect, serialize, deserialize, commit_workflow!, rollback_workflow!, persistModelStateContract,
     ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
     Contract, Partner, Product, Tariff, Workflow,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
