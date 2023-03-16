@@ -4,12 +4,13 @@ using LifeInsuranceProduct
 using BitemporalPostgres
 using SearchLight
 using JSON
+import LifeInsuranceDataModel: connect, get_contracts, get_partners, get_products
 import SearchLight: Serializer.serialize, Serializer.deserialize
-export connect, serialize, deserialize, commit_workflow!, rollback_workflow!, persistModelStateContract,
+export connect, get_contracts, get_partners, get_products, serialize, deserialize, create_component, update_component, update_entity, commit_workflow!, rollback_workflow!, persistModelStateContract,
     ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
     Contract, Partner, Product, Tariff, Workflow,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
-    csection, psection, pisection, tisection, prsection, tsection,
+    csection, psection, pisection, prsection, tsection,
     get_contracts, get_partners, get_products, history_forest,
     get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role
 
