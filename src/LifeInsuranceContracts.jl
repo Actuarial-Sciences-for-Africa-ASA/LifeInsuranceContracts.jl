@@ -6,7 +6,7 @@ using SearchLight
 using JSON
 import LifeInsuranceDataModel: connect, get_contracts, get_partners, get_products
 import SearchLight: Serializer.serialize, Serializer.deserialize
-export connect, get_contracts, get_partners, get_products, serialize, deserialize, create_component, update_component, update_entity, commit_workflow!, rollback_workflow!, persistModelStateContract,
+export connect, get_contracts, get_partners, get_products, serialize, deserialize, create_component!, update_component!, update_entity!, commit_workflow!, rollback_workflow!, persistModelStateContract,
     ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
     Contract, Partner, Product, Tariff, Workflow,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
