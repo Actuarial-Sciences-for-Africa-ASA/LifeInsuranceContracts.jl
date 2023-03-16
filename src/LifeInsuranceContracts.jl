@@ -5,10 +5,13 @@ using BitemporalPostgres
 using SearchLight
 using JSON
 import SearchLight: Serializer.serialize, Serializer.deserialize
-export serialize, deserialize,
-    persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role,
+export connect, serialize, deserialize,
+    ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
     Contract, Partner, Product, Tariff, Workflow,
-    ContractSection, PartnerSection, ProductSection, TariffSection
+    ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
+    csection, psection, pisection, tisection, prsection, tsection,
+    get_contracts, get_partners, get_products, history_forest,
+    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role
 
 tariffs = Dict{Integer,Integer}
 
