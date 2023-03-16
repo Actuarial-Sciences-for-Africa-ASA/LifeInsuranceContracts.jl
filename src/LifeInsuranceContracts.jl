@@ -4,8 +4,11 @@ using LifeInsuranceProduct
 using BitemporalPostgres
 using SearchLight
 using JSON
-export persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role
 import SearchLight: Serializer.serialize, Serializer.deserialize
+export serialize, deserialize,
+    persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role,
+    Contract, Partner, Product, Tariff, Workflow,
+    ContractSection, PartnerSection, ProductSection, TariffSection
 
 tariffs = Dict{Integer,Integer}
 
