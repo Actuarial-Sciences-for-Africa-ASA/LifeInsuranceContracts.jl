@@ -1,10 +1,11 @@
 module LifeInsuranceContracts
 using LifeInsuranceDataModel, LifeInsuranceProduct, BitemporalPostgres, SearchLight, JSON
-using Dates, TimeZones
+using Dates, ToStruct, TimeZones
 import LifeInsuranceDataModel: connect, get_contracts, get_partners, get_products
-import SearchLight: Serializer.serialize, Serializer.deserialize
-export connect, get_contracts, get_partners, get_products,
-    serialize, deserialize,
+import SearchLight: find, Serializer.serialize, Serializer.deserialize, SQLWhereExpression
+import ToStruct: tostruct
+export tostruct, connect, get_contracts, get_partners, get_products,
+    find, serialize, deserialize, SQLWhereExpression,
     create_component!, update_component!, update_entity!, commit_workflow!, rollback_workflow!, get_revision, MaxDate, ValidityInterval, Workflow,
     persistModelStateContract,
     get_revision, ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
