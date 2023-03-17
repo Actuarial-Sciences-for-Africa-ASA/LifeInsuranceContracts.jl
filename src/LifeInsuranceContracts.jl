@@ -3,13 +3,19 @@ using LifeInsuranceDataModel, LifeInsuranceProduct, BitemporalPostgres, SearchLi
 using Dates, TimeZones
 import LifeInsuranceDataModel: connect, get_contracts, get_partners, get_products
 import SearchLight: Serializer.serialize, Serializer.deserialize
-export connect, get_contracts, get_partners, get_products, serialize, deserialize, create_component!, update_component!, update_entity!, commit_workflow!, rollback_workflow!, persistModelStateContract,
+export connect, get_contracts, get_partners, get_products,
+    serialize, deserialize,
+    create_component!, update_component!, update_entity!, commit_workflow!, rollback_workflow!, get_revision, MaxDate, ValidityInterval, Workflow,
+    persistModelStateContract,
     get_revision, ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
-    Contract, Partner, PartnerRevision, Product, Tariff, Workflow,
+    Contract, Partner, PartnerRevision, Product, Tariff,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
     csection, psection, pisection, prsection, tsection,
     get_contracts, get_partners, partner_ids, get_products, history_forest,
     get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, get_node_by_label, load_role
+
+
+
 
 tariffs = Dict{Integer,Integer}
 

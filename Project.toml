@@ -12,3 +12,6 @@ LifeInsuranceProduct = "492f22fc-54e6-4f0f-bb9b-bacd199f5046"
 Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"
 SearchLight = "340e8cb6-72eb-11e8-37ce-c97ebeb32050"
 TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
+
+[compat]
+LifeInsuranceProduct = "0.6.1"
