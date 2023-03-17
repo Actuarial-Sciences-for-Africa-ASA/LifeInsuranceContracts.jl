@@ -12,7 +12,7 @@ export connect, get_contracts, get_partners, get_products,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
     csection, psection, pisection, prsection, tsection,
     get_contracts, get_partners, partner_ids, get_products, history_forest,
-    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, get_node_by_label, load_role
+    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, treeview, get_node_by_label, load_role
 
 
 
@@ -34,14 +34,14 @@ function definitions
 """
 
 """
-convert(node::BitemporalPostgres.Node)::Dict{String,Any}
+treeview(node::BitemporalPostgres.Node)::Dict{String,Any}
 
 provides the view for the history forest from tree data the contracts/partnersModel delivers
 """
-function convert(node::BitemporalPostgres.Node)::Dict{String,Any}
+function treeview(node::BitemporalPostgres.Node)::Dict{String,Any}
     i = Dict(string(fn) => getfield(getfield(node, :interval), fn) for fn in fieldnames(ValidityInterval))
     shdw = length(node.shadowed) == 0 ? [] : map(node.shadowed) do child
-        convert(child)
+        treeview(child)
     end
     Dict("version" => string(i["ref_version"]), "interval" => i, "children" => shdw, "icon" => (i["is_committed"] == 1 ? "done" : "pending"), "label" => (i["is_committed"] == 1 ? "committed " : "pending ") * string(i["tsdb_validfrom"]) * " valid as of " * string(Date(i["tsworld_validfrom"], UTC)))
 end
