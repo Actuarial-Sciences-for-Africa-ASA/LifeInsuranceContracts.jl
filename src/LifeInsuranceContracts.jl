@@ -5,11 +5,11 @@ import LifeInsuranceDataModel: connect, get_contracts, get_partners, get_product
 import SearchLight: Serializer.serialize, Serializer.deserialize
 export connect, get_contracts, get_partners, get_products, serialize, deserialize, create_component!, update_component!, update_entity!, commit_workflow!, rollback_workflow!, persistModelStateContract,
     get_revision, ContractPartnerRole, TariffItemRole, TariffItemPartnerRole,
-    Contract, Partner, Product, Tariff, Workflow,
+    Contract, Partner, PartnerRevision, Product, Tariff, Workflow,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
     csection, psection, pisection, prsection, tsection,
-    get_contracts, get_partners, get_products, history_forest,
-    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, fn, load_role
+    get_contracts, get_partners, partner_ids, get_products, history_forest,
+    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, convert, get_node_by_label, load_role
 
 tariffs = Dict{Integer,Integer}
 
@@ -42,17 +42,17 @@ end
 
 
 """
-fn
+get_node_by_label
 retrieves a history node from its label 
 """
 
-function fn(ns::Vector{Dict{String,Any}}, lbl::String)
+function get_node_by_label(ns::Vector{Dict{String,Any}}, lbl::String)
     for n in ns
         if (n["version"] == lbl)
             return (n)
         else
             if (length(n["children"]) > 0)
-                m = fn(n["children"], lbl)
+                m = get_node_by_label(n["children"], lbl)
                 if !isnothing((m))
                     return m
                 end
@@ -144,4 +144,12 @@ function load_role(role)::Vector{Dict{String,Any}}
     end
 end
 
+"""
+the list of persisted partners'ids
+"""
+function get_ids(partners::Vector{Partner})
+    map(partners) do p
+        Dict("value" => p.id.value, "label" => get_revision(Partner, PartnerRevision, p.ref_history, p.ref_version).description)
+    end
+end
 end # module LifeInsuranceContracts
