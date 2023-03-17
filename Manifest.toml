@@ -568,7 +568,7 @@ version = "1.3.0"
 
 [[deps.LifeInsuranceProduct]]
 deps = ["BitemporalPostgres", "Dates", "JSON", "LifeContingencies", "LifeInsuranceDataModel", "MortalityTables", "Revise", "SearchLight", "SearchLightPostgreSQL", "TimeZones", "ToStruct", "Yields"]
-git-tree-sha1 = "95cfc8eb057baca5dc1b167b8683ecfb66434209"
+git-tree-sha1 = "8d799d491c9df3e895d1d8d711b4e7a16646dd11"
 repo-rev = "main"
 repo-url = "https://github.com/Actuarial-Sciences-for-Africa-ASA/LifeInsuranceProduct.jl"
 uuid = "492f22fc-54e6-4f0f-bb9b-bacd199f5046"
