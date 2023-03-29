@@ -560,7 +560,7 @@ version = "2.3.1"
 
 [[deps.LifeInsuranceDataModel]]
 deps = ["BitemporalPostgres", "ColorSchemes", "DataFrames", "DataStructures", "Dates", "Intervals", "JSON", "LibPQ", "Logging", "Pkg", "Revise", "SearchLight", "SearchLightPostgreSQL", "Test", "TimeZones", "ToStruct"]
-git-tree-sha1 = "7f3ec2717a2f5a4ae4175968a93d9ec48390bc41"
+git-tree-sha1 = "4fee15e8a0aabb9e3ff7e258fce9224d5f70a4e2"
 repo-rev = "main"
 repo-url = "https://github.com/Actuarial-Sciences-for-Africa-ASA/LifeInsuranceDataModel.jl"
 uuid = "4892898e-25d7-46ce-b5c3-dea2164303ac"
@@ -568,7 +568,7 @@ version = "1.3.0"
 
 [[deps.LifeInsuranceProduct]]
 deps = ["BitemporalPostgres", "Dates", "JSON", "LifeContingencies", "LifeInsuranceDataModel", "MortalityTables", "Revise", "SearchLight", "SearchLightPostgreSQL", "TimeZones", "ToStruct", "Yields"]
-git-tree-sha1 = "87169169783198b35772e74906fbe823d0f5e191"
+git-tree-sha1 = "8b8becfbaf47bdeac57e5377b9d5361c73b0ab87"
 repo-rev = "main"
 repo-url = "https://github.com/Actuarial-Sciences-for-Africa-ASA/LifeInsuranceProduct.jl"
 uuid = "492f22fc-54e6-4f0f-bb9b-bacd199f5046"
