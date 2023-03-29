@@ -1,7 +1,7 @@
 name = "LifeInsuranceContracts"
 uuid = "fd4345fa-c73f-4ad5-b086-dba238792776"
 authors = ["michaelfliegner <michael.fliegner@hamburg.de>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 BitemporalPostgres = "e513cd14-23e6-48df-acf1-d9bc8fa5674b"
