@@ -140,18 +140,6 @@ function compareModelStateContract(previous::Dict{String,Any}, current::Dict{Str
 end
 
 """
-function load_role(role)::Vector{Dict{String,Any}}
-    into ViewModel
-"""
-
-function load_role(role)::Vector{Dict{String,Any}}
-    LifeInsuranceDataModel.connect()
-    map(find(role)) do entry
-        Dict{String,Any}("value" => entry.id.value, "label" => entry.value)
-    end
-end
-
-"""
 the list of persisted partners'ids
 """
 function get_ids(partners::Vector{Partner})
