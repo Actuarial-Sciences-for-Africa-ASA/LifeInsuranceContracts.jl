@@ -20,10 +20,11 @@ tif = get_tariff_interface(Val(interface_id))
 tgt = tif.calls["calculation_target"]
 tgt["selected"] = "net premium"
 parms = tgt[tgt["selected"]]
-parms["n"]["value"] = 20
-parms["frequency"]["value"] = 2
+parms["n"]["value"] = "20"
+parms["frequency"]["value"] = "2"
 parms["begin"]["value"] = "2023-04-01"
-parms["sum insured"]["value"] = 20000
+parms["sum insured"]["value"] = "20000"
 
 tif.calculator(interface_id, ti, tif.calls)
+
 println(tif.calls)
