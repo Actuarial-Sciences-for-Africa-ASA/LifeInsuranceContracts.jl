@@ -13,7 +13,7 @@ export tostruct, connect, get_contracts, get_partners, get_products,
     ContractSection, PartnerSection, ProductItemSection, TariffItemSection, ProductSection, TariffSection,
     csection, psection, pisection, prsection, tsection,
     get_contracts, get_partners, partner_ids, get_products, history_forest,
-    get_tariff_interface, persist_tariffs, compareModelStateContract, compareRevisions, treeview, get_node_by_label, load_role
+    get_tariff_interface, validate, persist_tariffs, compareModelStateContract, compareRevisions, treeview, get_node_by_label, load_role
 
 
 
