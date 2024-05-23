@@ -1,1 +1,1 @@
-FROM michaelfliegner/gitpodpgijulia
+image: michaelfliegner/gitpodpgijulia
